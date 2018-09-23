@@ -63,6 +63,19 @@ namespace LibSystem
         private void button6_Click(object sender, EventArgs e)
         {
 
+            LoadForm.Dispose();
+            LoadForm = new UT();
+            LoadForm.TopLevel = false;
+
+            this.panel3.Controls.Add(LoadForm);
+            //LoadForm.Dock = DockStyle.Fill;
+            LoadForm.Show();
+
+            if (this.WindowState == System.Windows.Forms.FormWindowState.Maximized)
+            {
+                LoadForm.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            }
+
         }
 
         private void button5_Click(object sender, EventArgs e)

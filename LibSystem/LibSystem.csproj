@@ -183,6 +183,12 @@
     <Compile Include="studenForm.Designer.cs">
       <DependentUpon>studenForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UT.Designer.cs">
+      <DependentUpon>UT.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AnalsisForm.resx">
       <DependentUpon>AnalsisForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -216,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="studenForm.resx">
       <DependentUpon>studenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UT.resx">
+      <DependentUpon>UT.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="GraphBulanan.xsc">
       <DependentUpon>GraphBulanan.xsd</DependentUpon>

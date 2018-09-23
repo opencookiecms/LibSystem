@@ -185,6 +185,7 @@
             this.textkad.Name = "textkad";
             this.textkad.Size = new System.Drawing.Size(210, 22);
             this.textkad.TabIndex = 11;
+            this.textkad.TextChanged += new System.EventHandler(this.textkad_TextChanged);
             // 
             // dateTimePicker1
             // 

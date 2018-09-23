@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button8 = new System.Windows.Forms.Button();
             this.buttClose = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -45,7 +46,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
@@ -70,6 +70,21 @@
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            // 
+            // button8
+            // 
+            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button8.BackColor = System.Drawing.Color.Orange;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button8.Location = new System.Drawing.Point(1061, 3);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(67, 27);
+            this.button8.TabIndex = 6;
+            this.button8.Text = "[]";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // buttClose
             // 
@@ -209,7 +224,6 @@
             this.button6.TabIndex = 5;
             this.button6.Text = "SETTING";
             this.button6.UseVisualStyleBackColor = false;
-            this.button6.Visible = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
@@ -290,21 +304,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1019, 679);
             this.panel3.TabIndex = 2;
-            // 
-            // button8
-            // 
-            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button8.BackColor = System.Drawing.Color.Orange;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button8.Location = new System.Drawing.Point(1061, 3);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(67, 27);
-            this.button8.TabIndex = 6;
-            this.button8.Text = "[]";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // Form1
             // 

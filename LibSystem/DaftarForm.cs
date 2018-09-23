@@ -26,6 +26,9 @@ namespace LibSystem
         {
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "yyyy-MM-dd";
+
+            textkad.MaxLength = 5;
+ 
         }
 
         public void InsertData ()
@@ -62,6 +65,15 @@ namespace LibSystem
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void textkad_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(textkad.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Hanya angka digit sahaja dibenarkan.");
+                textkad.Text = textkad.Text.Remove(textkad.Text.Length - 1);
+            }
         }
     }
 }
