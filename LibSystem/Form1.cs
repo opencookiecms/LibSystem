@@ -49,15 +49,15 @@ namespace LibSystem
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            LoadForm = new HomeForm();
-            LoadForm.TopLevel = false;
-            button8.Visible = false;
+            LoadForm = new DaftarForm();
+           LoadForm.TopLevel = false;
+           button8.Visible = false;
             this.panel3.Controls.Add(LoadForm);
-            LoadForm.Show();
-            if (this.WindowState == System.Windows.Forms.FormWindowState.Maximized)
-            {
-                LoadForm.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            }
+           LoadForm.Show();
+           if (this.WindowState == System.Windows.Forms.FormWindowState.Maximized)
+           {
+               LoadForm.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+           }
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -98,16 +98,16 @@ namespace LibSystem
         private void HomeBut_Click(object sender, EventArgs e)
         {
             LoadForm.Dispose();
-            LoadForm = new HomeForm();
+            LoadForm = new DaftarForm();
             LoadForm.TopLevel = false;
 
             this.panel3.Controls.Add(LoadForm);
-            LoadForm.Show();
+           LoadForm.Show();
 
-            if (this.WindowState == System.Windows.Forms.FormWindowState.Maximized)
+           if (this.WindowState == System.Windows.Forms.FormWindowState.Maximized)
             {
                 LoadForm.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            }
+           }
 
         }
 
@@ -134,38 +134,38 @@ namespace LibSystem
         private void button3_Click(object sender, EventArgs e)
         {
 
-            TrialTime = DateTime.Now;
+            //TrialTime = DateTime.Now;
 
-            if (!Settings.Default.Tanda)
-                {
-                    Settings.Default.TrialTime = TrialTime;
-                    Settings.Default.Tanda = true;
-                    Settings.Default.Save();
-                    MessageBox.Show("Welcome to the Attandance system, This is first run application");
-                 }
-            else
-            {
-                 if (Settings.Default.TrialTime.Add(new TimeSpan(1095, 0, 0, 0)) > DateTime.Now)
-             {
-                    //MessageBox.Show("P");
-                    LoadForm.Dispose();
-                    LoadForm = new DaftarForm();
-                    LoadForm.TopLevel = false;
+            //if (!Settings.Default.Tanda)
+            //    {
+            //        Settings.Default.TrialTime = TrialTime;
+            //        Settings.Default.Tanda = true;
+            //        Settings.Default.Save();
+            //        MessageBox.Show("Welcome to the Attandance system, This is first run application");
+            //     }
+            //else
+            //{
+            //     if (Settings.Default.TrialTime.Add(new TimeSpan(1095, 0, 0, 0)) > DateTime.Now)
+            // {
+            //        //MessageBox.Show("P");
+            //        LoadForm.Dispose();
+            //        LoadForm = new DaftarForm();
+            //        LoadForm.TopLevel = false;
 
-                    this.panel3.Controls.Add(LoadForm);
-                    //LoadForm.Dock = DockStyle.Fill;
-                    LoadForm.Show();
+            //        this.panel3.Controls.Add(LoadForm);
+            //        //LoadForm.Dock = DockStyle.Fill;
+            //        LoadForm.Show();
 
-                    if (this.WindowState == System.Windows.Forms.FormWindowState.Maximized)
-                    {
-                        LoadForm.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-                    }
-                }
-            else
-                {
-                     MessageBox.Show("This Program version has expired, Please contact the administrator to active this application, Thank You");
-                }
-            }
+            //        if (this.WindowState == System.Windows.Forms.FormWindowState.Maximized)
+            //        {
+            //            LoadForm.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            //        }
+            //    }
+            //else
+            //    {
+            //         MessageBox.Show("This Program version has expired, Please contact the administrator to active this application, Thank You");
+            //    }
+            //}
       
 
         }
@@ -224,6 +224,11 @@ namespace LibSystem
                 button1.Visible = true;
                 button8.Visible = false;
             }
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

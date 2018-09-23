@@ -55,12 +55,12 @@
             // 
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button8);
             this.panel1.Controls.Add(this.buttClose);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -78,7 +78,7 @@
             this.button8.FlatAppearance.BorderSize = 0;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button8.Location = new System.Drawing.Point(1061, 3);
+            this.button8.Location = new System.Drawing.Point(1060, 3);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(67, 27);
             this.button8.TabIndex = 6;
@@ -119,7 +119,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(991, 3);
+            this.button2.Location = new System.Drawing.Point(990, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(67, 27);
             this.button2.TabIndex = 3;
@@ -184,12 +184,13 @@
             this.HomeBut.ForeColor = System.Drawing.Color.White;
             this.HomeBut.Image = global::LibSystem.Properties.Resources.home__1_;
             this.HomeBut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.HomeBut.Location = new System.Drawing.Point(0, 103);
+            this.HomeBut.Location = new System.Drawing.Point(-2, 385);
             this.HomeBut.Name = "HomeBut";
             this.HomeBut.Size = new System.Drawing.Size(180, 46);
             this.HomeBut.TabIndex = 5;
             this.HomeBut.Text = "HOME";
             this.HomeBut.UseVisualStyleBackColor = false;
+            this.HomeBut.Visible = false;
             this.HomeBut.Click += new System.EventHandler(this.HomeBut_Click);
             // 
             // button7
@@ -201,7 +202,7 @@
             this.button7.ForeColor = System.Drawing.Color.White;
             this.button7.Image = global::LibSystem.Properties.Resources.businesswoman;
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(0, 241);
+            this.button7.Location = new System.Drawing.Point(0, 180);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(180, 46);
             this.button7.TabIndex = 5;
@@ -218,11 +219,11 @@
             this.button6.ForeColor = System.Drawing.Color.White;
             this.button6.Image = global::LibSystem.Properties.Resources.settings;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(0, 333);
+            this.button6.Location = new System.Drawing.Point(0, 272);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(180, 46);
             this.button6.TabIndex = 5;
-            this.button6.Text = "SETTING";
+            this.button6.Text = "UTILITI";
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -235,7 +236,7 @@
             this.button5.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.button5.Image = global::LibSystem.Properties.Resources.bar_chart;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(0, 288);
+            this.button5.Location = new System.Drawing.Point(1, 226);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(180, 46);
             this.button5.TabIndex = 5;
@@ -252,7 +253,7 @@
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Image = global::LibSystem.Properties.Resources.download;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(0, 195);
+            this.button4.Location = new System.Drawing.Point(1, 133);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(180, 46);
             this.button4.TabIndex = 6;
@@ -281,7 +282,7 @@
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.button3.Image = global::LibSystem.Properties.Resources.checklist;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 149);
+            this.button3.Location = new System.Drawing.Point(1, 87);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(180, 46);
             this.button3.TabIndex = 5;
@@ -304,6 +305,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1019, 679);
             this.panel3.TabIndex = 2;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // Form1
             // 

@@ -25,7 +25,7 @@ namespace LibSystem
         private void DaftarForm_Load(object sender, EventArgs e)
         {
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.CustomFormat = "yyyy-MM-dd";
+            dateTimePicker1.CustomFormat = "dd-MM-yyyy";
 
             textkad.MaxLength = 5;
  
@@ -33,8 +33,8 @@ namespace LibSystem
 
         public void InsertData ()
         {
+        
 
-           
             string query = "insert into users(`icno`, `usrKad`, `firstName`, `lastName`, `usrdob`, `usrGender`, `usrForm`, `usrKelas`, `usrTahun`) values  ('" + textIcNo.Text + "', '" + textkad.Text + "', '" + textFName.Text + "', '" + textLname.Text + "', '" + dateTimePicker1.Text + "', '" + comboJantina.Text + "', '" + comboForm.Text + "', '" + comboKelas.Text + "', '" +textTahun.Text+ "') ";
 
 
@@ -59,7 +59,16 @@ namespace LibSystem
 
         private void ButSave_Click(object sender, EventArgs e)
         {
-            InsertData();
+            if (textkad.TextLength < 5)
+
+            {
+                MessageBox.Show("Sila masukkan 5 digit angka");
+            }
+            else
+            {
+                InsertData();
+            }
+            
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -74,6 +83,8 @@ namespace LibSystem
                 MessageBox.Show("Hanya angka digit sahaja dibenarkan.");
                 textkad.Text = textkad.Text.Remove(textkad.Text.Length - 1);
             }
+
+          
         }
     }
 }

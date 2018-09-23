@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using LibSystem.Properties;
+using System.Xml;
 
 namespace LibSystem
 {
     public partial class HomeForm : Form
     {
+        public DateTime TrialTime;
         string connectionString = "datasource=localhost;port=3306;username=root;password=;database=libsys; SslMode=none";
 
         public HomeForm()
@@ -25,6 +28,7 @@ namespace LibSystem
         private void HomeForm_Load(object sender, EventArgs e)
         {
             timer1.Start();
+            button3.Visible = false;
     
         }
 
@@ -168,6 +172,110 @@ namespace LibSystem
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+          
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.WindowState = System.Windows.Forms.FormWindowState.Normal;
+       
+
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                button1.Visible = true;
+                button8.Visible = false;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         
+
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                button1.Visible = false;
+                button8.Visible = true;
+            }
+        }
+
+        private void buttClose_Click(object sender, EventArgs e)
+        {
+
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+
+            Form1 j = new Form1();
+            j.Show();
+            
+
+
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if(textBox1.Text != null && textBox1.Text.Length > 3)
+            {
+                XmlDocument doc = new XmlDocument();
+                doc.Load("libresource.xml");
+
+                foreach(XmlNode node in doc.DocumentElement)
+                {
+                    string name = node.Attributes[0].InnerText;
+
+                    if(name == textBox1.Text)
+                    {
+                        MessageBox.Show("Welcome to the system");
+                        TrialTime = DateTime.Now;
+
+                        if (!Settings.Default.Tanda)
+                        {
+                            Settings.Default.TrialTime = TrialTime;
+                            Settings.Default.Tanda = true;
+                            Settings.Default.Save();
+                            MessageBox.Show("Welcome to the  system, This is first run application");
+                  
+                        }
+                        else
+                        {
+                            if (Settings.Default.TrialTime.Add(new TimeSpan(2000, 0, 0, 0)) > DateTime.Now)
+                            {
+                                //MessageBox.Show("This is trial version");
+
+                                label2.Visible = false;
+                                textBox1.Visible = false;
+                                button4.Visible = false;
+                                button3.Visible = true;
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("this product has expired, Please contact the administrator to active this application, Thank You");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Kata laluan id salah sila cuba lagi");
+                        textBox1.Text = string.Empty;
+                        textBox1.Focus();
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Kata laluan id salah sila cuba lagi");
+                textBox1.Text = string.Empty;
+                textBox1.Focus();
+            }
+        }
     }
 }
