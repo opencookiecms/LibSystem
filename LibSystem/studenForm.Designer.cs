@@ -57,6 +57,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudent)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -77,7 +83,7 @@
             this.dataGridViewStudent.Name = "dataGridViewStudent";
             this.dataGridViewStudent.ReadOnly = true;
             this.dataGridViewStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewStudent.Size = new System.Drawing.Size(993, 273);
+            this.dataGridViewStudent.Size = new System.Drawing.Size(993, 267);
             this.dataGridViewStudent.TabIndex = 0;
             this.dataGridViewStudent.Click += new System.EventHandler(this.dataGridViewStudent_Click);
             // 
@@ -392,15 +398,83 @@
             this.label14.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(255, 11);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(121, 16);
+            this.label14.Size = new System.Drawing.Size(86, 16);
             this.label14.TabIndex = 40;
-            this.label14.Text = "[Carian No Kad, Nama]";
+            this.label14.Text = "[Carian No Kad]";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021"});
+            this.comboBox1.Location = new System.Drawing.Point(615, 7);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 42;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(567, 11);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(42, 16);
+            this.label6.TabIndex = 43;
+            this.label6.Text = "Tahun";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(347, 11);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(41, 16);
+            this.label15.TabIndex = 44;
+            this.label15.Text = "Kelas";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(742, 8);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(98, 23);
+            this.button3.TabIndex = 45;
+            this.button3.Text = "Cari";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(394, 6);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(167, 24);
+            this.comboBox2.TabIndex = 46;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(909, 7);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(92, 23);
+            this.button4.TabIndex = 47;
+            this.button4.Text = "Lihat Semua Data";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // studenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1021, 679);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBox1);
@@ -449,5 +523,11 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Button button4;
     }
 }

@@ -24,14 +24,18 @@ namespace LibSystem
 
         private void studenForm_Load(object sender, EventArgs e)
         {
-            DataShow("");
+            DataShow();
+         
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "yyyy-MM-dd";
         }
 
-        public void DataShow(string toSearch)
+        public void DataSeach()
         {
-            string query = "SELECT `usrId` as id,`icno` as IC,`usrKad` as KadNo, `firstName` as FirstName,`lastName` as LastName,`usrdob` as DateOfBirth,`usrGender` as Gender,`usrForm` as Form,`usrKelas` as Class,`usrTahun` as Years ,`usrRegDate` as RegisterDate FROM `users` WHERE CONCAT(`usrKad`, `firstName`, `lastName`) like '%"+toSearch+"%'";
+         
+       
+   
+            string query = "SELECT `usrId` as id,`icno` as IC,`usrKad` as KadNo, `firstName` as FirstName,`lastName` as LastName,`usrdob` as DateOfBirth,`usrGender` as Gender,`usrForm` as Form,`usrKelas` as Class,`usrTahun` as Years ,`usrRegDate` as RegisterDate FROM `users` WHERE (usrKad = '" + textBox1.Text+ "') OR (usrTahun = '"+comboBox1.Text+"') OR (usrKelas = '"+comboBox2.Text+"')";
 
             // Prepare the connection
             MySqlConnection conn = new MySqlConnection(connectionString);
@@ -62,6 +66,38 @@ namespace LibSystem
 
 
         }
+
+        public void DataShow()
+        {
+
+            string query = "SELECT `usrId` as id,`icno` as IC,`usrKad` as KadNo, `firstName` as FirstName,`lastName` as LastName,`usrdob` as DateOfBirth,`usrGender` as Gender,`usrForm` as Form,`usrKelas` as Class,`usrTahun` as Years ,`usrRegDate` as RegisterDate FROM `users`";
+
+            // Prepare the connection
+            MySqlConnection conn = new MySqlConnection(connectionString);
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            table = new DataTable();
+            adapter.Fill(table);
+            dataGridViewStudent.DataSource = table;
+            dataGridViewStudent.RowTemplate.Height = 60;
+            dataGridViewStudent.AllowUserToAddRows = false;
+
+            dataGridViewStudent.DataSource = table;
+            dataGridViewStudent.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            cmd.CommandTimeout = 60;
+            dataGridViewStudent.Columns["id"].HeaderText = "No ID";
+            dataGridViewStudent.Columns["IC"].HeaderText = "No Kad Pengenalan";
+            dataGridViewStudent.Columns["KadNo"].HeaderText = "No Kad";
+            dataGridViewStudent.Columns["FirstName"].HeaderText = "Nama Mula";
+            dataGridViewStudent.Columns["LastName"].HeaderText = "Nama Akhir";
+            dataGridViewStudent.Columns["DateOfBirth"].HeaderText = "Tarikh Lahir";
+            dataGridViewStudent.Columns["Gender"].HeaderText = "Jantina";
+            dataGridViewStudent.Columns["Form"].HeaderText = "Tingkatan";
+            dataGridViewStudent.Columns["Class"].HeaderText = "Kelas";
+            dataGridViewStudent.Columns["Years"].HeaderText = "Tahun";
+            dataGridViewStudent.Columns["RegisterDate"].HeaderText = "Tarikh Daftar";
+        }
+
 
         private void dataGridViewStudent_Click(object sender, EventArgs e)
         {   
@@ -103,7 +139,7 @@ namespace LibSystem
                 MySqlDataReader myReader = cmd.ExecuteReader();
                 MessageBox.Show("User succesfully registered");
                 conn.Close();
-                DataShow("");
+                DataShow();
             }
             catch (Exception ex)
             {
@@ -121,8 +157,8 @@ namespace LibSystem
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            string toSearch = textBox1.Text.ToString();
-            DataShow(toSearch);
+
+       
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -148,7 +184,7 @@ namespace LibSystem
                 MessageBox.Show("Deleteing Data Succesfull");
 
                 conn.Close();
-                DataShow("");
+                DataShow();
             }
             catch (Exception ex)
             {
@@ -156,6 +192,28 @@ namespace LibSystem
                 MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+          
+           
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+          
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DataSeach();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DataShow();
         }
     }
 }
