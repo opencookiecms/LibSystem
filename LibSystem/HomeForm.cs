@@ -29,7 +29,8 @@ namespace LibSystem
         {
             timer1.Start();
             button3.Visible = false;
-    
+            systtemtrial();
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -233,34 +234,7 @@ namespace LibSystem
 
                     if(name == textBox1.Text)
                     {
-                        MessageBox.Show("Welcome to the system");
-                        TrialTime = DateTime.Now;
-
-                        if (!Settings.Default.Tanda)
-                        {
-                            Settings.Default.TrialTime = TrialTime;
-                            Settings.Default.Tanda = true;
-                            Settings.Default.Save();
-                            MessageBox.Show("Welcome to the  system, This is first run application");
-                            label2.Visible = false;
-                            textBox1.Visible = false;
-                            button4.Visible = false;
-                            button3.Visible = true;
-
-
-                        }
-                        else
-                        {
-                            if (Settings.Default.TrialTime.Add(new TimeSpan(2000, 0, 0, 0)) > DateTime.Now)
-                            {
-                             
-
-                            }
-                            else
-                            {
-                                MessageBox.Show("this product has expired, Please contact the administrator to active this application, Thank You");
-                            }
-                        }
+                        systtemtrial();
                     }
                     else
                     {
@@ -277,5 +251,44 @@ namespace LibSystem
                 textBox1.Focus();
             }
         }
+
+        public void butt()
+        {
+            label2.Visible = true;
+            textBox1.Visible = true;
+            button4.Visible = true;
+            button3.Visible = false;
+        }
+
+        public void systtemtrial()
+        {
+            //MessageBox.Show("Welcome to the system");
+            TrialTime = DateTime.Now;
+
+            if (!Settings.Default.Tanda)
+            {
+                Settings.Default.TrialTime = TrialTime;
+                Settings.Default.Tanda = true;
+                Settings.Default.Save();
+                MessageBox.Show("Welcome to the  system, This is first run application");
+                butt();
+
+
+
+            }
+            else
+            {
+                if (Settings.Default.TrialTime.Add(new TimeSpan(2000, 0, 0, 0)) > DateTime.Now)
+                {
+
+
+                }
+                else
+                {
+                    MessageBox.Show("this product has expired, Please contact the administrator to active this application, Thank You");
+                }
+            }
+        }
+
     }
 }
