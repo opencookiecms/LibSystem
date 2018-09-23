@@ -242,18 +242,18 @@ namespace LibSystem
                             Settings.Default.Tanda = true;
                             Settings.Default.Save();
                             MessageBox.Show("Welcome to the  system, This is first run application");
-                  
+                            label2.Visible = false;
+                            textBox1.Visible = false;
+                            button4.Visible = false;
+                            button3.Visible = true;
+
+
                         }
                         else
                         {
                             if (Settings.Default.TrialTime.Add(new TimeSpan(2000, 0, 0, 0)) > DateTime.Now)
                             {
-                                //MessageBox.Show("This is trial version");
-
-                                label2.Visible = false;
-                                textBox1.Visible = false;
-                                button4.Visible = false;
-                                button3.Visible = true;
+                             
 
                             }
                             else
