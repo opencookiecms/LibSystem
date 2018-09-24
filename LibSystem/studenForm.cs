@@ -8,6 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using iTextSharp.text.pdf;
+using iTextSharp;
+using System.IO;
+using System.Xml;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace LibSystem
 {
@@ -20,9 +26,7 @@ namespace LibSystem
             InitializeComponent();
         }
 
- 
-
-        private void studenForm_Load(object sender, EventArgs e)
+         private void studenForm_Load(object sender, EventArgs e)
         {
             DataShow();
          
@@ -215,6 +219,17 @@ namespace LibSystem
         {
             DataShow();
             
+        }
+
+        public void buttTopdf()
+        {
+            Document doc = new Document(PageSize.A4, 7f, 5f, 5f, 0f);
+          
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            buttTopdf();
         }
     }
 }
