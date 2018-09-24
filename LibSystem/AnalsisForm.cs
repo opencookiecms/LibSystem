@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Excel = Microsoft.Office.Interop.Excel;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
 
 namespace LibSystem
 {
@@ -266,6 +269,40 @@ namespace LibSystem
 
         }
 
-        
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+            Document doc = new Document(iTextSharp.text.PageSize.A4.Rotate(), 10, 10, 10, 10);
+            PdfPTable table = new PdfPTable(DataGridRangking.Columns.Count);
+
+            for (int j = 0; j < DataGridRangking.Columns.Count; j++)
+            {
+                table.AddCell(new Phrase(DataGridRangking.Columns[j].HeaderText));
+            }
+
+            table.HeaderRows = 1;
+
+            for (int i = 0; i < DataGridRangking.Rows.Count; i++)
+            {
+                for (int k = 0; k < DataGridRangking.Columns.Count; k++)
+                {
+                    if (DataGridRangking[k, i].Value != null) ;
+                    {
+                        table.AddCell(new Phrase(DataGridRangking[k, i].Value.ToString()));
+                    }
+                }
+            }
+
+            PdfWriter.GetInstance(doc, new FileStream("D:/Ranking.pdf", FileMode.Create));
+            doc.Open();
+            Paragraph p1 = new Paragraph("Senarai Ranking Pelajar Bagi Tahun 2018");
+            p1.Alignment = Element.ALIGN_CENTER;
+
+
+            doc.Add(p1);
+            doc.Add(new Paragraph("\n"));
+            doc.Add(table);
+            doc.Close();
+        }
     }
 }

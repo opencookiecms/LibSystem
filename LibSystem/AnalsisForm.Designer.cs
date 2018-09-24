@@ -58,6 +58,7 @@
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printDocument2 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.button5 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -287,6 +288,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.button4);
             this.tabPage2.Controls.Add(this.DataGridRangking);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -332,6 +334,16 @@
             this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(775, 5);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(98, 23);
+            this.button5.TabIndex = 2;
+            this.button5.Text = "Export to Pdf";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // AnalsisForm
             // 
@@ -384,5 +396,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }

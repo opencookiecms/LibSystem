@@ -341,25 +341,25 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(462, 232);
+            this.label12.Location = new System.Drawing.Point(430, 232);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(68, 18);
+            this.label12.Size = new System.Drawing.Size(119, 18);
             this.label12.TabIndex = 27;
-            this.label12.Text = "P.Bertugas";
+            this.label12.Text = "Pengawas Bertugas";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(462, 205);
+            this.label11.Location = new System.Drawing.Point(415, 207);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(44, 18);
+            this.label11.Size = new System.Drawing.Size(133, 18);
             this.label11.TabIndex = 26;
-            this.label11.Text = "Denda";
+            this.label11.Text = "Bayaran Denda Lewat";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(462, 177);
+            this.label10.Location = new System.Drawing.Point(500, 179);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(45, 18);
             this.label10.TabIndex = 25;

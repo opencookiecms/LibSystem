@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewStudent = new System.Windows.Forms.DataGridView();
             this.comboJantina = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -51,6 +51,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.lblid = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -63,15 +64,14 @@
             this.button3 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudent)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewStudent
             // 
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.dataGridViewStudent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.dataGridViewStudent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewStudent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewStudent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -305,7 +305,6 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.lblid);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.button2);
@@ -337,6 +336,16 @@
             this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Maklumat Pelajar";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(888, 7);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(113, 23);
+            this.button5.TabIndex = 42;
+            this.button5.Text = "Export to PDF";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // lblid
             // 
@@ -390,7 +399,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(14, 8);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(235, 22);
+            this.textBox1.Size = new System.Drawing.Size(120, 22);
             this.textBox1.TabIndex = 39;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -398,7 +407,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(255, 11);
+            this.label14.Location = new System.Drawing.Point(140, 10);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(86, 16);
             this.label14.TabIndex = 40;
@@ -414,7 +423,7 @@
             "2019",
             "2020",
             "2021"});
-            this.comboBox1.Location = new System.Drawing.Point(615, 7);
+            this.comboBox1.Location = new System.Drawing.Point(496, 7);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 42;
@@ -423,7 +432,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(567, 11);
+            this.label6.Location = new System.Drawing.Point(452, 11);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(42, 16);
             this.label6.TabIndex = 43;
@@ -432,7 +441,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(347, 11);
+            this.label15.Location = new System.Drawing.Point(232, 9);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(41, 16);
             this.label15.TabIndex = 44;
@@ -440,7 +449,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(742, 8);
+            this.button3.Location = new System.Drawing.Point(623, 7);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(98, 23);
             this.button3.TabIndex = 45;
@@ -451,36 +460,27 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(394, 6);
+            this.comboBox2.Location = new System.Drawing.Point(279, 7);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(167, 24);
             this.comboBox2.TabIndex = 46;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(909, 7);
+            this.button4.Location = new System.Drawing.Point(727, 6);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(92, 23);
+            this.button4.Size = new System.Drawing.Size(92, 25);
             this.button4.TabIndex = 47;
             this.button4.Text = "Lihat Semua Data";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(646, 292);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 42;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // studenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1021, 679);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.button3);

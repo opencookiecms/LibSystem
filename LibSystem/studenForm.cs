@@ -8,8 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using iTextSharp.text.pdf;
-using iTextSharp;
 using System.IO;
 using System.Xml;
 using iTextSharp.text;
@@ -21,6 +19,8 @@ namespace LibSystem
     {
         DataTable table = new DataTable();
         string connectionString = "datasource=localhost;port=3306;username=root;password=;database=libsys; SslMode=none";
+     
+
         public studenForm()
         {
             InitializeComponent();
@@ -223,7 +223,40 @@ namespace LibSystem
 
         public void buttTopdf()
         {
-            Document doc = new Document(PageSize.A4, 7f, 5f, 5f, 0f);
+
+            Document doc = new Document(iTextSharp.text.PageSize.A4.Rotate(), 10, 10, 10, 10);
+            PdfPTable table = new PdfPTable(dataGridViewStudent.Columns.Count);
+
+            for (int j = 0; j < dataGridViewStudent.Columns.Count; j++)
+            {
+                table.AddCell(new Phrase(dataGridViewStudent.Columns[j].HeaderText));
+            }
+
+            table.HeaderRows = 1;
+
+            for (int i = 0; i < dataGridViewStudent.Rows.Count; i++)
+            {
+                for (int k = 0; k < dataGridViewStudent.Columns.Count; k++)
+                {
+                    if (dataGridViewStudent[k, i].Value != null) ;
+                    {
+                        table.AddCell(new Phrase(dataGridViewStudent[k, i].Value.ToString()));
+                    }
+                }
+            }
+
+            PdfWriter.GetInstance(doc, new FileStream("D:/SenaraiPelajar.pdf", FileMode.Create));
+            doc.Open();
+            Paragraph p1 = new Paragraph("Senarai Nama Pelajar");
+            p1.Alignment = Element.ALIGN_CENTER;
+       
+          
+            doc.Add(p1);
+            doc.Add(new Paragraph("\n"));
+            doc.Add(table);
+            doc.Close();
+         
+   
           
         }
 

@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
+using System.IO;
 namespace LibSystem
 {
     public partial class SenaraiPeminjam : Form
@@ -94,6 +97,41 @@ namespace LibSystem
                 ExelWork.SaveAs(dialogSave.FileName, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
             }
             ExelApp.Quit();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Document doc = new Document(iTextSharp.text.PageSize.A4.Rotate(), 10, 10, 10, 10);
+            PdfPTable table = new PdfPTable(dataGridView1.Columns.Count);
+
+            for (int j = 0; j < dataGridView1.Columns.Count; j++)
+            {
+                table.AddCell(new Phrase(dataGridView1.Columns[j].HeaderText));
+            }
+
+            table.HeaderRows = 1;
+
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                for (int k = 0; k < dataGridView1.Columns.Count; k++)
+                {
+                    if (dataGridView1[k, i].Value != null) ;
+                    {
+                        table.AddCell(new Phrase(dataGridView1[k, i].Value.ToString()));
+                    }
+                }
+            }
+
+            PdfWriter.GetInstance(doc, new FileStream("D:/SenaraiPelajar.pdf", FileMode.Create));
+            doc.Open();
+            Paragraph p1 = new Paragraph("Senarai Nama Peminjam");
+            p1.Alignment = Element.ALIGN_CENTER;
+
+
+            doc.Add(p1);
+            doc.Add(new Paragraph("\n"));
+            doc.Add(table);
+            doc.Close();
         }
     }
 }
