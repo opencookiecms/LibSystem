@@ -29,7 +29,7 @@ namespace LibSystem
         {
             timer1.Start();
             button3.Visible = false;
-            systtemtrial();
+       
 
         }
 
@@ -254,10 +254,10 @@ namespace LibSystem
 
         public void butt()
         {
-            label2.Visible = true;
-            textBox1.Visible = true;
-            button4.Visible = true;
-            button3.Visible = false;
+            label2.Visible = false;
+            textBox1.Visible = false;
+            button4.Visible = false;
+            button3.Visible = true;
         }
 
         public void systtemtrial()
@@ -271,9 +271,7 @@ namespace LibSystem
                 Settings.Default.Tanda = true;
                 Settings.Default.Save();
                 MessageBox.Show("Welcome to the  system, This is first run application");
-                butt();
-
-
+               
 
             }
             else
@@ -281,7 +279,7 @@ namespace LibSystem
                 if (Settings.Default.TrialTime.Add(new TimeSpan(2000, 0, 0, 0)) > DateTime.Now)
                 {
 
-
+                    butt();
                 }
                 else
                 {
