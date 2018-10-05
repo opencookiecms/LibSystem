@@ -16,7 +16,7 @@ namespace LibSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new studenForm());
+            Application.Run(new HomeForm());
         }
     }
 }

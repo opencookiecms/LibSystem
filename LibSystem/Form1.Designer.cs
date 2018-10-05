@@ -184,7 +184,7 @@
             this.HomeBut.ForeColor = System.Drawing.Color.White;
             this.HomeBut.Image = global::LibSystem.Properties.Resources.home__1_;
             this.HomeBut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.HomeBut.Location = new System.Drawing.Point(-2, 385);
+            this.HomeBut.Location = new System.Drawing.Point(1, 339);
             this.HomeBut.Name = "HomeBut";
             this.HomeBut.Size = new System.Drawing.Size(180, 46);
             this.HomeBut.TabIndex = 5;
