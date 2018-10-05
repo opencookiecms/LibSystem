@@ -38,6 +38,10 @@
             this.punchStatus = new System.Windows.Forms.Label();
             this.ButIn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.buttClose = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.labelDate = new System.Windows.Forms.Label();
             this.timeLabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -49,10 +53,6 @@
             this.countLabel = new System.Windows.Forms.Label();
             this.userPunchDate = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.buttClose = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -85,9 +85,9 @@
             this.label1.ForeColor = System.Drawing.Color.Teal;
             this.label1.Location = new System.Drawing.Point(152, 189);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(229, 24);
+            this.label1.Size = new System.Drawing.Size(243, 24);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Scan Your Identity Card";
+            this.label1.Text = "Sila Masukkn No Id Anda";
             // 
             // panel1
             // 
@@ -130,11 +130,11 @@
             // 
             this.welcomeLabel.AutoSize = true;
             this.welcomeLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcomeLabel.Location = new System.Drawing.Point(93, 282);
+            this.welcomeLabel.Location = new System.Drawing.Point(31, 273);
             this.welcomeLabel.Name = "welcomeLabel";
-            this.welcomeLabel.Size = new System.Drawing.Size(90, 22);
+            this.welcomeLabel.Size = new System.Drawing.Size(132, 22);
             this.welcomeLabel.TabIndex = 6;
-            this.welcomeLabel.Text = "Welcome :";
+            this.welcomeLabel.Text = "Selamat Datang:";
             // 
             // punchStatus
             // 
@@ -143,11 +143,10 @@
             this.punchStatus.AutoSize = true;
             this.punchStatus.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.punchStatus.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.punchStatus.Location = new System.Drawing.Point(222, 331);
+            this.punchStatus.Location = new System.Drawing.Point(206, 357);
             this.punchStatus.Name = "punchStatus";
-            this.punchStatus.Size = new System.Drawing.Size(100, 18);
+            this.punchStatus.Size = new System.Drawing.Size(0, 18);
             this.punchStatus.TabIndex = 9;
-            this.punchStatus.Text = "Status Message";
             // 
             // ButIn
             // 
@@ -174,6 +173,68 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1197, 89);
             this.panel2.TabIndex = 6;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.Orange;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Salmon;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(1051, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(67, 27);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "[    ]";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button8
+            // 
+            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button8.BackColor = System.Drawing.Color.Orange;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button8.Location = new System.Drawing.Point(1052, 6);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(67, 27);
+            this.button8.TabIndex = 9;
+            this.button8.Text = "[]";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // buttClose
+            // 
+            this.buttClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttClose.BackColor = System.Drawing.Color.Crimson;
+            this.buttClose.FlatAppearance.BorderSize = 0;
+            this.buttClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttClose.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttClose.Location = new System.Drawing.Point(1120, 6);
+            this.buttClose.Name = "buttClose";
+            this.buttClose.Size = new System.Drawing.Size(67, 27);
+            this.buttClose.TabIndex = 8;
+            this.buttClose.Text = "X";
+            this.buttClose.UseVisualStyleBackColor = false;
+            this.buttClose.Click += new System.EventHandler(this.buttClose_Click);
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button2.Location = new System.Drawing.Point(982, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(67, 27);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "_";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // labelDate
             // 
@@ -281,68 +342,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1197, 100);
             this.panel3.TabIndex = 13;
-            // 
-            // button8
-            // 
-            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button8.BackColor = System.Drawing.Color.Orange;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button8.Location = new System.Drawing.Point(1052, 6);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(67, 27);
-            this.button8.TabIndex = 9;
-            this.button8.Text = "[]";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // buttClose
-            // 
-            this.buttClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttClose.BackColor = System.Drawing.Color.Crimson;
-            this.buttClose.FlatAppearance.BorderSize = 0;
-            this.buttClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttClose.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttClose.Location = new System.Drawing.Point(1120, 6);
-            this.buttClose.Name = "buttClose";
-            this.buttClose.Size = new System.Drawing.Size(67, 27);
-            this.buttClose.TabIndex = 8;
-            this.buttClose.Text = "X";
-            this.buttClose.UseVisualStyleBackColor = false;
-            this.buttClose.Click += new System.EventHandler(this.buttClose_Click);
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(982, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(67, 27);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "_";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.Orange;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Salmon;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(1051, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(67, 27);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "[    ]";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
